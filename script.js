@@ -1,6 +1,6 @@
 //your JS code here. If required.
 const changeButton = document.getElementById("change_button")
-const resetButton = document.getElementById("reset")
+const resetButton = document.getElementById("Reset")
 
 changeButton.addEventListener("click",()=>changeColor())
 resetButton.addEventListener("click",()=>resetColor())
