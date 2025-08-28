@@ -16,6 +16,8 @@ if(selectedBlock<1 || selectedBlock>9){
 }
 	
 	document.getElementById(selectedBlock).style.backgroundColor=assignedColor
+	     console.log(selectedBlock, assignedColor)
+
 }
 function resetColor() {
 	for(let i=1;i<=9;i++){
