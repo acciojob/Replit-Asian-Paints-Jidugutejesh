@@ -1,28 +1,23 @@
-//your JS code here. If required.
+  const changeBtn = document.getElementById("change_button");
+    const resetBtn = document.getElementById("Reset");
 
-const changeButton = document.getElementById("change_button")
-const resetButton = document.getElementById("Reset")
+    function resetGrid() {
+      const blocks = document.querySelectorAll(".grid-item");
+      blocks.forEach(block => block.style.backgroundColor = "transparent");
+    }
 
-changeButton.addEventListener("click",()=>changeColor())
-resetButton.addEventListener("click",()=>resetColor())
-function changeColor(){
-	resetColor()
-	
-	const selectedBlock = document.getElementById("block_id").value;
-	const assignedColor = document.getElementById("color_id").value;
+    changeBtn.addEventListener("click", () => {
+      const blockId = document.getElementById("block_id").value;
+      const color = document.getElementById("colour_id").value;
 
-if(selectedBlock<1 || selectedBlock>9){
-	alert("Please enter valid block 1-9")	
-		return
-}
-	
-	document.getElementById(selectedBlock).style.backgroundColor=assignedColor
-	     console.log(selectedBlock, assignedColor)
+      resetGrid();
 
-}
-function resetColor() {
-	for(let i=1;i<=9;i++){
-		document.getElementById(i.toString()).style.backgroundColor="transparent";
-	}
-	
-}
+      const targetBlock = document.getElementById(blockId);
+      if (targetBlock) {
+        targetBlock.style.backgroundColor = color;
+      } else {
+        alert("Invalid Block ID! Please enter 1–9.");
+      }
+    });
+
+    resetBtn.addEventListener("click", resetGrid);
